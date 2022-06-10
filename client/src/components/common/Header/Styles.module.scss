@@ -1,0 +1,186 @@
+.navbar {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 3px 0 6px #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    z-index: 99;
+
+    .logo,
+    .nav__user {
+        cursor: pointer;
+    }
+
+    .logo {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    .nav__user {
+        margin-right: 30px;
+        display: flex;
+
+        .user {
+            margin-right: 10px;
+        }
+    }
+
+    .dropdown__menu {
+        position: fixed;
+        width: 300px;
+        top: 66px;
+        right: 30px;
+        display: none;
+        padding: 5px;
+        box-shadow: 0 0 22px #ccc;
+        border-radius: 8px;
+        background-color: #fff;
+
+        .hr {
+            margin: 10px;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+
+            .avatar {
+                object-fit: cover;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
+
+            .user {
+                margin-left: 10px;
+
+                .fullName {
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                }
+                .desc {
+                    color: rgb(148, 148, 148);
+                }
+            }
+
+            &:hover {
+                background-color: rgb(240, 240, 240);
+                transition: all 0.2s linear;
+            }
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            height: 56px;
+            padding: 10px;
+            border-radius: 8px;
+
+            .item__icon {
+                flex-basis: 15%;
+                height: 40px;
+                border-radius: 50%;
+                font-size: 1.6rem;
+                background: rgb(240, 240, 240);
+            }
+
+            .item__title {
+                margin-left: 15px;
+                flex-basis: 30%;
+                font-weight: 600;
+            }
+
+            .item__wrapper {
+                flex-basis: 50%;
+            }
+
+            &:not(.theme) {
+                cursor: pointer;
+            }
+
+            &:hover {
+                background-color: rgb(240, 240, 240);
+                transition: all 0.2s linear;
+
+                .item__icon {
+                    background: #fff;
+                }
+            }
+        }
+
+        .item + .item {
+            margin-top: 10px;
+        }
+
+        .theme {
+            .item__wrapper {
+                display: flex;
+                justify-content: right;
+                .color {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    margin-right: 15px;
+                    cursor: pointer;
+
+                    &.light {
+                        border: 1px solid rgb(170, 170, 170);
+                        color: #000;
+                        background-color: var(--light-color);
+                    }
+                    &.dark {
+                        background-color: var(--dark-color);
+                        color: #fff;
+                        border: none;
+                    }
+                    &.blue {
+                        background-color: var(--primary-color);
+                        color: #fff;
+                        border: none;
+                    }
+                }
+            }
+        }
+
+        &.open {
+            display: block;
+        }
+    }
+
+    .icon {
+        display: flex;
+
+        .svg {
+            margin: auto;
+        }
+    }
+
+    &.light {
+        background-color: var(--navbar-light-color);
+        .logo,
+        .nav__user {
+            color: var(--blue-color);
+        }
+    }
+
+    &.blue {
+        background-color: var(--navbar-blue-color);
+        .logo,
+        .nav__user {
+            color: var(--light-color);
+        }
+    }
+    &.dark {
+        background-color: var(--dark-color);
+        .logo,
+        .nav__user {
+            color: var(--white-color);
+        }
+    }
+}

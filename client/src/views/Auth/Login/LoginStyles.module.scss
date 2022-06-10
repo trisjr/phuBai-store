@@ -1,0 +1,65 @@
+.login {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: url("../../../assets/landing.jpg") no-repeat center center/cover;
+  display: flex;
+  z-index: 9;
+
+  .loginForm {
+    margin: auto;
+    background: #fff;
+    width: 460px;
+    border-radius: 12px;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-size: 3rem;
+      text-align: center;
+      font-weight: 900;
+      padding: 20px;
+      background-color: #0288d1ff;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      color: #fff;
+      cursor: default;
+    }
+    .fill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      .fillEmail,
+      .fillPassword {
+        display: flex;
+        .icon {
+          display: flex;
+          align-items: center;
+          font-size: 1.6rem;
+          margin-right: 10px;
+        }
+      }
+      .action {
+        text-align: center;
+        margin-top: 60px;
+      }
+    }
+    .other {
+      margin: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .text {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .login {
+  }
+}

@@ -1,0 +1,29 @@
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "a@gmail.com",
+    "password": "a",
+    "fullName": "a"
+}
+
+################################
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "vokimtrivkt@gmail.com",
+    "password": "admin"
+}
+
+###
+POST http://localhost:5000/api/airport
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM1OTVlNTgyNDk1ZGJmZWNlZmNmMjciLCJpYXQiOjE2NDc2Nzk5Mjh9.TO7IAxb_J8GfqRP1tzCW8lvS0Ag18gt1s8SJI5iJ7TI
+
+{
+    "code": "HUI",
+    "name": "Sân bay Nội bài",
+    "province": "Huế"
+}

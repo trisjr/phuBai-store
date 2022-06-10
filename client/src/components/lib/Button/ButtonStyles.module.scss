@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --size: 8px;
+
+  --black: #000000;
+  --white: #ffffff;
+  --primary: #0288d1;
+  --success: #388e3c;
+  --error: #d8000c;
+  --warning: #f57c00;
+  --disabled: #545e6a;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px 0 #ccc;
+  margin: 8px;
+
+  &:not(&:last-child) {
+    float: left;
+  }
+
+  .content {
+    margin: auto;
+    text-transform: uppercase;
+    color: var(--white);
+    font-family: "Mulish", sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      font-size: 1.06rem;
+    }
+    .text {
+      font-weight: 500;
+    }
+
+    .icon + .text {
+      margin-left: 4px;
+    }
+    .text + .icon {
+      margin-left: 4px;
+    }
+  }
+
+  &.contained {
+    &.primary {
+      background: var(--primary);
+    }
+    &.success {
+      background: var(--success);
+    }
+    &.disabled {
+      background: var(--disabled);
+    }
+    &.error {
+      background: var(--error);
+    }
+    &.warning {
+      background: var(--warning);
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &.outlined {
+    border: 2px solid var(--black);
+    background: var(--white);
+    .content {
+      font-weight: 400;
+    }
+    &.primary {
+      border-color: var(--primary);
+      .content {
+        .text {
+          color: var(--primary);
+        }
+      }
+    }
+    &.success {
+      border-color: var(--success);
+      .content {
+        .text {
+          color: var(--success);
+        }
+      }
+    }
+    &.warning {
+      border-color: var(--warning);
+      .content {
+        .text {
+          color: var(--warning);
+        }
+      }
+    }
+    &.error {
+      border-color: var(--error);
+      .content {
+        .text {
+          color: var(--error);
+        }
+      }
+    }
+    &.disabled {
+      border-color: var(--disabled);
+      .content {
+        color: var(--disabled);
+      }
+    }
+    &:hover {
+      background: #eeeeee;
+    }
+  }
+
+  // size
+  &.medium {
+    height: calc(5 * var(--size));
+    width: calc(15 * var(--size));
+    .content {
+      font-size: 14px;
+    }
+  }
+  &.small {
+    height: calc(4 * var(--size));
+    width: calc(13 * var(--size));
+    .content {
+      font-size: 13px;
+    }
+  }
+  &.large {
+    height: calc(5.5 * var(--size));
+    width: calc(17 * var(--size));
+    .content {
+      font-size: 15px;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

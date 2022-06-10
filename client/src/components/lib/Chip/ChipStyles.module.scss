@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --chip-size: 8px;
+
+  --chip-black: #000000;
+  --chip-white: #ffffff;
+  --chip-primary: #0288d1;
+  --chip-success: #388e3c;
+  --chip-error: #d8000c;
+  --chip-warning: #f57c00;
+  --chip-disabled: #545e6a;
+}
+
+.chip {
+  font-family: "Mulish", sans-serif;
+  padding: 8px 16px;
+  width: max-content;
+  border-radius: 25px;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 10px;
+
+  &.small {
+    font-size: 14px;
+  }
+  &.medium {
+    font-size: 16px;
+  }
+  &.large {
+    font-size: 18px;
+  }
+
+  &.contained {
+    &.primary {
+      background: var(--chip-primary);
+    }
+    &.success {
+      background: var(--chip-success);
+    }
+    &.error {
+      background: var(--chip-error);
+    }
+    &.warning {
+      background: var(--chip-warning);
+    }
+  }
+  &.outlined {
+    &.primary {
+      border: 1px solid var(--chip-primary);
+      color: var(--chip-primary);
+    }
+    &.success {
+      border: 1px solid var(--chip-success);
+      color: var(--chip-success);
+    }
+    &.error {
+      border: 1px solid var(--chip-error);
+      color: var(--chip-error);
+    }
+    &.warning {
+      border: 1px solid var(--chip-warning);
+      color: var(--chip-warning);
+    }
+  }
+}

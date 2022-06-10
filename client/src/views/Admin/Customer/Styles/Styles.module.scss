@@ -1,0 +1,25 @@
+.cccd {
+    flex-basis: 20%;
+}
+.fullName {
+    flex-basis: 30%;
+}
+.birthday {
+    flex-basis: 20%;
+}
+.phone {
+    flex-basis: 20%;
+}
+.index {
+    flex-basis: 10%;
+}
+
+.fullName,
+.cccd {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.text {
+    margin: 10px 0;
+}

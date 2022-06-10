@@ -1,0 +1,23 @@
+.code {
+    flex-basis: 25%;
+}
+.name {
+    flex-basis: 35%;
+}
+.province {
+    flex: 30%;
+}
+.index {
+    flex-basis: 10%;
+}
+
+.code,
+.name,
+.province {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.text {
+    margin: 10px 0;
+}

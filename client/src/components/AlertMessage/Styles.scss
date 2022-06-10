@@ -1,0 +1,23 @@
+.alert__form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+
+    .alert__icon {
+        font-size: 2rem;
+    }
+
+    .alert__message {
+        font-size: 1.2rem;
+        margin-left: 10px;
+    }
+
+    &.danger {
+        background-color: var(--error-color);
+    }
+}

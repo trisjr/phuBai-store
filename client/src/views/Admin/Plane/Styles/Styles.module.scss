@@ -1,0 +1,25 @@
+.code {
+    flex-basis: 20%;
+}
+.airline {
+    flex-basis: 40%;
+}
+.status {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+}
+.index {
+    flex-basis: 10%;
+}
+
+.code,
+.name,
+.airline {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.text {
+    margin: 10px 0;
+}

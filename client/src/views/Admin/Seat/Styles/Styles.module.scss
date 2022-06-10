@@ -1,0 +1,24 @@
+.code {
+    flex-basis: 25%;
+}
+.plane {
+    flex-basis: 35%;
+}
+.seatType {
+    flex: 30%;
+}
+.index {
+    flex-basis: 10%;
+}
+
+.code,
+.plane,
+.seatType {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.text {
+    margin: 4px 0;
+}

@@ -1,0 +1,202 @@
+.sidebar {
+    height: calc(100vh - 56px);
+    position: relative;
+
+    .body {
+        // margin-top: 40px;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+
+        .part {
+            .part__title {
+                padding: 10px;
+                margin-bottom: 20px;
+
+                .text {
+                    position: absolute;
+                }
+
+                .icon {
+                    position: absolute;
+                    cursor: pointer;
+                    right: 32px;
+                }
+            }
+            .item {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 14px 27px;
+
+                .icon {
+                    font-size: 1.6rem;
+                }
+
+                .title {
+                    position: absolute;
+                    left: 64px;
+                    width: 100px;
+                }
+
+                &:hover {
+                    background: rgb(255, 255, 255, 0.5);
+                    transition: all 0.5s linear;
+                }
+
+                &.active {
+                    background: #fff;
+                    transition: all 0.5s linear;
+                }
+            }
+
+            .collapse {
+                overflow: hidden;
+
+                &.close {
+                    animation: collapse__close 1s forwards ease;
+                }
+                &.open {
+                    animation: collapse__open 1s forwards ease;
+                }
+            }
+        }
+    }
+
+    &.close {
+        width: 80px;
+        animation: sidebar__close 1s forwards ease;
+
+        .header {
+            .logo__name {
+                animation: hide 0.5s forwards ease;
+            }
+        }
+        .body {
+            .part {
+                .part__title {
+                    .text {
+                        animation: hide 1s forwards ease;
+                    }
+                }
+                .item {
+                    .title {
+                        animation: hide 1s forwards ease;
+                    }
+                }
+            }
+        }
+    }
+
+    &.open {
+        animation: sidebar__open 1s forwards ease;
+
+        .header {
+            .logo__name {
+                animation: show 3s forwards ease;
+            }
+        }
+        .body {
+            .part {
+                .part__title {
+                    .text {
+                        animation: show 1s forwards ease;
+                    }
+                }
+                .item {
+                    .title {
+                        animation: show 1s forwards ease;
+                    }
+                }
+            }
+        }
+    }
+
+    .icon {
+        display: flex;
+        .svg {
+            margin: auto;
+        }
+    }
+
+    &.light {
+        color: var(--sidebar-light-color);
+        background: var(--sidebar-blue-color);
+
+        .item {
+            color: var(--sidebar-light-color);
+
+            &.active {
+                color: var(--sky-color);
+            }
+        }
+    }
+    &.blue {
+        background: var(--light-color);
+
+        .header {
+            color: var(--sky-color);
+        }
+
+        .item {
+            color: var(--sky-color);
+        }
+    }
+    &.dark {
+        background: var(--sliver-color);
+        .item {
+            color: var(--dark-color);
+        }
+    }
+}
+
+@keyframes sidebar__close {
+    0% {
+        width: 260px;
+    }
+    100% {
+        width: 80px;
+    }
+}
+@keyframes sidebar__open {
+    0% {
+        width: 80px;
+    }
+    100% {
+        width: 260px;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+@keyframes show {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes collapse__close {
+    0% {
+        height: 540px;
+    }
+    100% {
+        height: 0;
+    }
+}
+@keyframes collapse__open {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 540px;
+    }
+}

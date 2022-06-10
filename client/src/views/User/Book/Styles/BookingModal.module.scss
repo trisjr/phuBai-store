@@ -1,0 +1,390 @@
+.outForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 9999;
+
+  .container {
+    position: relative;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 14px;
+    height: 800px;
+    display: flex;
+
+    .iconClose {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 2rem;
+      color: var(--error-color);
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .bookingBar {
+      border-top-left-radius: 14px;
+      border-bottom-left-radius: 14px;
+
+      .header {
+        font-size: 2rem;
+        padding: 20px;
+        font-weight: 900;
+      }
+
+      .bar {
+        width: 240px;
+
+        .bookingBar__item {
+          .head {
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            font-size: 1.1rem;
+            cursor: pointer;
+          }
+        }
+
+        .bookingBar__item + .bookingBar__item {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .bookingBody {
+      width: 100%;
+      background: var(--white-color);
+      border-top-right-radius: 14px;
+      border-bottom-right-radius: 14px;
+
+      .chooseSeat {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .seatInfo {
+          flex-basis: 30%;
+
+          .seatItem {
+            padding: 20px;
+            text-align: left;
+            margin: 10px;
+            border-radius: 7px;
+            cursor: pointer;
+            color: var(--white-color);
+
+            .title {
+              text-align: center;
+              font-size: 1.4rem;
+              font-weight: 700;
+              margin-bottom: 20px;
+            }
+
+            .code {
+              padding: 5px;
+            }
+
+            .type {
+              padding: 5px;
+            }
+
+            .price {
+              padding: 5px;
+            }
+          }
+        }
+
+        .seatWrapper {
+          position: relative;
+          width: 340px;
+          height: 800px;
+          background: #ccc;
+
+          .title {
+            font-size: 1.6rem;
+            margin-top: 50px;
+          }
+
+          .firstClass {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+          }
+
+          .seat {
+            padding: 5px 10px;
+            margin: 5px auto;
+            background: #fff;
+            border-radius: 4px;
+            width: max-content;
+            cursor: pointer;
+          }
+        }
+      }
+      .fillInformation {
+        padding: 40px;
+        text-align: left;
+        position: relative;
+        height: 800px;
+        .title {
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+        .fillTraveler,
+        .fillContact {
+          .label {
+            font-weight: 500;
+          }
+        }
+
+        .fillContact {
+          margin-top: 60px;
+        }
+
+        .action {
+          position: absolute;
+          bottom: 50px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    .payment {
+      position: relative;
+      height: 800px;
+      .title {
+        padding: 20px;
+        font-size: 2rem;
+        font-weight: 900;
+      }
+      .wrapper {
+        margin-top: 30px;
+        .desc {
+          padding: 20px;
+          font-style: italic;
+        }
+        .qrCode {
+        }
+        .fill {
+          margin-top: 30px;
+          position: relative;
+          width: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      .action {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .show {
+      .title {
+        padding: 10px;
+        font-size: 3rem;
+        font-weight: 900;
+      }
+
+      .content {
+        padding: 20px;
+        .info {
+          text-align: left;
+          .info_item {
+            font-style: italic;
+          }
+          .company {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.8rem;
+          }
+        }
+        .details {
+          margin-top: 40px;
+          .detail_title {
+            text-align: left;
+            font-size: 1.4rem;
+            font-weight: 600;
+          }
+          .contact {
+            .item {
+              text-align: left;
+              padding: 8px;
+              margin-top: 5px;
+            }
+          }
+          .flightDetails {
+            .flight {
+              .head {
+                background: #6a98d4;
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: white;
+              }
+              .group {
+                &:not(.head) {
+                  background: #b7d6fd;
+                }
+                zoom: 1;
+                &:before,
+                &:after {
+                  content: "";
+                  display: table;
+                }
+                &:after {
+                  clear: both;
+                }
+
+                .span_1_of_4 {
+                  width: 23.8%;
+                }
+                .col {
+                  display: block;
+                  float: left;
+                  margin: 1% 0 1% 1.6%;
+
+                  &:first-child {
+                    margin-left: 0;
+                  }
+                }
+              }
+            }
+          }
+          .bill {
+            .billTotal {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.blue {
+    .container {
+      .bookingBar {
+        background: var(--primary-color);
+        color: var(--white-color);
+
+        .bar {
+          .bookingBar__item {
+            &:hover {
+              background: rgb(255, 255, 255, 0.8);
+              color: var(--primary-color);
+              transition: all 0.2s linear;
+            }
+
+            &.select {
+              background: var(--white-color);
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+
+      .bookingBody {
+        .chooseSeat {
+          .seatInfo {
+            .seatItem {
+              background: var(--primary-color);
+
+              &.active {
+                background: var(--blue-color);
+                transition: all 0.2s linear;
+              }
+            }
+          }
+
+          .seatWrapper {
+            background: var(--light-color);
+
+            .seat {
+              &.active {
+                background: var(--primary-color);
+                color: var(--white-color);
+                transition: all 0.2s linear;
+              }
+              &.disable {
+                background: #ccc;
+                cursor: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.dark {
+    .container {
+      .bookingBar {
+        background: var(--dark-color);
+        color: var(--white-color);
+
+        .bar {
+          .bookingBar__item {
+            &:hover {
+              background: rgb(255, 255, 255, 0.8);
+              color: var(--dark-color);
+              transition: all 0.2s linear;
+            }
+
+            &.select {
+              background: var(--white-color);
+              color: var(--dark-color);
+              transition: all 0.2s linear;
+            }
+          }
+        }
+      }
+
+      .bookingBody {
+        .chooseSeat {
+          .seatInfo {
+            .seatItem {
+              background: var(--gray-color);
+
+              &.active {
+                background: var(--dark-color);
+                transition: all 0.2s linear;
+              }
+            }
+          }
+
+          .seatWrapper {
+            background: var(--sliver-color);
+
+            .seat {
+              &.active {
+                background: var(--dark-color);
+                color: var(--white-color);
+                transition: all 0.2s linear;
+              }
+              &.disable {
+                background: #ccc;
+                cursor: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  display: flex;
+
+  .svg {
+    margin: auto;
+  }
+}

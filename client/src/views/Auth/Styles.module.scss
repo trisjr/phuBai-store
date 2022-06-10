@@ -1,0 +1,86 @@
+.landing {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: url("../../assets/landing.jpg") no-repeat center center/cover;
+    display: flex;
+    z-index: 9;
+
+    .login,
+    .register {
+        width: 450px;
+        margin: auto;
+        background: #fff;
+        padding-bottom: 30px;
+        border-radius: 12px;
+
+        .title {
+            font-size: 3rem;
+            text-align: center;
+            font-weight: 900;
+            padding: 20px;
+            background-color: var(--primary-color);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            color: #fff;
+            cursor: default;
+        }
+
+        .loginForm,
+        .registerForm {
+            padding: 40px;
+            .fill {
+                padding: 50px 0;
+                align-items: center;
+
+                .item {
+                    position: relative;
+                    .icon {
+                        height: 36px;
+                        width: 36px;
+                        position: absolute;
+                        display: flex;
+                        font-size: 1.5rem;
+                        color: var(--primary-color);
+
+                        .svg {
+                            margin: auto;
+                        }
+                    }
+
+                    .label {
+                        position: relative;
+                        left: -15px;
+                        color: var(--disabled-color);
+                    }
+
+                    .input {
+                        width: 100%;
+                        height: 36px;
+                        padding-left: 34px;
+                        border: 1px solid var(--primary-color);
+                        border-radius: 4px;
+                        font-size: 16px;
+                        align-items: center;
+                    }
+                }
+
+                .item + .item {
+                    margin-top: 20px;
+                }
+            }
+
+            .action {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .other {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    }
+}

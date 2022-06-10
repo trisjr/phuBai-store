@@ -1,0 +1,32 @@
+.chip {
+    width: 100px;
+    border-radius: 25px;
+    padding: 3px 0;
+    align-items: center;
+    display: flex;
+
+    &.contained {
+        color: #fff;
+        &.primary {
+            background-color: var(--primary-color);
+        }
+        &.success {
+            background-color: var(--success-color);
+        }
+        &.warning {
+            background-color: var(--warning-color);
+        }
+        &.error {
+            background-color: var(--error-color);
+        }
+    }
+
+    .content {
+        margin: auto;
+
+        .icon {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

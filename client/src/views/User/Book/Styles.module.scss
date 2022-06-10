@@ -1,0 +1,286 @@
+.bookTicket {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    .findTicket {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin: 0 auto;
+
+        .tripType {
+            width: 60%;
+            display: flex;
+            padding: 10px 20px;
+
+            .select {
+                .label {
+                    cursor: pointer;
+                }
+                .radio {
+                    cursor: pointer;
+                    margin-right: 10px;
+
+                    &::after {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 15px;
+                        top: -2px;
+                        left: -1px;
+                        position: relative;
+                        background-color: #d1d3d1;
+                        content: "";
+                        display: inline-block;
+                        visibility: visible;
+                        border: 2px solid white;
+                    }
+
+                    &:checked::after {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 15px;
+                        top: -2px;
+                        left: -1px;
+                        position: relative;
+                        background-color: var(--dark-color);
+                        content: "";
+                        display: inline-block;
+                        visibility: visible;
+                        border: 2px solid white;
+                    }
+                }
+            }
+
+            .select + .select {
+                margin-left: 26px;
+            }
+        }
+
+        .action {
+            margin-top: 30px;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    .resultFlight {
+        width: 80%;
+        margin: auto;
+        .step,
+        .result {
+            height: 550px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 2px 6px #ccc;
+
+            .title {
+                width: 100%;
+                padding: 20px;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                font-size: 1.7rem;
+                font-weight: 800;
+                color: var(--white-color);
+            }
+        }
+        .step {
+            position: relative;
+            .trip {
+                width: 100%;
+                .startTrip,
+                .returnTrip {
+                    display: flex;
+                    align-items: center;
+                    padding: 20px;
+                    cursor: pointer;
+                    transition: all 0.3s linear;
+
+                    .icon {
+                        flex-basis: 15%;
+
+                        .svg {
+                            margin: auto;
+                        }
+                    }
+                    .trip__info {
+                        flex-basis: 85%;
+                        .date {
+                            padding-top: 10px;
+                            font-style: italic;
+                            font-size: 1.1rem;
+                            font-family: "Raleway", sans-serif;
+                        }
+                        .province {
+                            display: flex;
+                            justify-content: space-evenly;
+                            .from,
+                            .to {
+                                font-size: 1.3rem;
+                                font-family: "Raleway", sans-serif;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background: rgb(204, 204, 204, 0.2);
+                    }
+                }
+            }
+
+            .action {
+                position: absolute;
+                bottom: 40px;
+            }
+        }
+
+        .result {
+            overflow: scroll;
+            .item {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                cursor: pointer;
+
+                .airline {
+                    .logo {
+                        width: 56px;
+                        height: 56px;
+                    }
+                }
+
+                .airline,
+                .price {
+                    flex-basis: 22%;
+                }
+                .from,
+                .to {
+                    flex-basis: 27%;
+                }
+                .time {
+                    font-family: "Raleway", sans-serif;
+                }
+
+                &:hover {
+                    background: rgb(204, 204, 204, 0.2);
+                }
+                &.active {
+                    background: #ccc;
+                    transition: all 0.3s linear;
+                }
+            }
+        }
+    }
+
+    &.blue {
+        .icon {
+            color: var(--primary-color);
+        }
+
+        .findTicket {
+            .tripType {
+                .select {
+                    color: var(--primary-color);
+                    .radio {
+                        &:checked::after {
+                            background-color: var(--primary-color);
+                        }
+                    }
+                }
+            }
+        }
+        .resultFlight {
+            .step,
+            .result {
+                .title {
+                    background: var(--primary-color);
+                }
+            }
+            .step {
+                .trip {
+                    .active {
+                        background-color: var(--light-color);
+                    }
+                }
+            }
+        }
+    }
+    &.dark {
+        .icon {
+            color: var(--dark-color);
+        }
+
+        .findTicket {
+            .tripType {
+                .select {
+                    color: var(--dark-color);
+                    .radio {
+                        &:checked::after {
+                            background-color: var(--dark-color);
+                        }
+                    }
+                }
+            }
+        }
+        .resultFlight {
+            .step,
+            .result {
+                .title {
+                    background: var(--dark-color);
+                }
+            }
+            .step {
+                .trip {
+                    .active {
+                        background-color: var(--sliver-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.row {
+    width: 100%;
+    .col {
+        float: left;
+        margin: 1% 0 1% 1.6%;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        .icon {
+            flex-basis: 12%;
+            display: flex;
+            font-size: 1.6rem;
+            .svg {
+                margin: auto;
+            }
+        }
+        .fill {
+            flex-basis: 88%;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    .span_3_of_3 {
+        width: 100%;
+    }
+    .span_2_of_3 {
+        width: 66.13%;
+    }
+    .span_1_of_3 {
+        width: 32.26%;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}

@@ -1,0 +1,59 @@
+.toggleButton {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .btn {
+        width: 100px;
+        height: 42px;
+        display: flex;
+        background-color: #fff;
+        border: 2px solid;
+        border-radius: 2px;
+        align-items: center;
+
+        .icon {
+            display: flex;
+            margin: auto;
+            font-size: 1.8rem;
+        }
+
+        &:first-child {
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+        &:last-child {
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .text {
+            margin: auto;
+            padding-right: 6px;
+        }
+    }
+    .btn + .btn {
+        margin-left: 3px;
+    }
+
+    &.dark {
+        .btn {
+            border-color: var(--dark-color);
+            color: var(--dark-color);
+
+            &.active {
+                background-color: var(--dark-color);
+                color: #fff;
+            }
+        }
+    }
+    &.blue {
+        .btn {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            &.active {
+                background-color: var(--primary-color);
+                color: #fff;
+            }
+        }
+    }
+}

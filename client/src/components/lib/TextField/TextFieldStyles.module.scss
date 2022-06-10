@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --textField-color: #0288d1;
+}
+
+.TextField {
+  position: relative;
+  margin: 8px;
+  width: var(--textField-width);
+  .title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(136, 136, 136);
+    padding: 0 3px;
+    margin-left: 13px;
+    font-family: "Mulish", sans-serif;
+    cursor: text;
+
+    &.focus {
+      animation: focus 0.15s forwards linear;
+    }
+    &.blur {
+      animation: blur 0.2s forwards linear;
+    }
+    &.label {
+      color: var(--textField-color);
+    }
+  }
+  .textField {
+    height: 48px;
+    padding: 0 16px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgb(204, 204, 204);
+    font-size: 1rem;
+    font-family: "Mulish", sans-serif;
+    &:focus {
+      border: 2px solid var(--textField-color);
+      padding: 0 15px;
+    }
+  }
+  &.withIcon {
+    .textField {
+      padding-left: 48px;
+    }
+    .icon {
+      font-size: 1.4rem;
+      padding: 13px;
+    }
+  }
+  &.error {
+    .textField {
+      border-color: #d8000c;
+      color: #d8000c;
+
+      &::placeholder {
+        color: #d8000c;
+      }
+    }
+    .title {
+      color: #d8000c;
+    }
+    .icon {
+      color: #d8000c;
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+@keyframes focus {
+  from {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  to {
+    top: 0;
+    background: #ffffff;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes blur {
+  from {
+    top: 0;
+    background: #ffffff;
+    font-size: 0.8rem;
+  }
+  to {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

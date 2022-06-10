@@ -1,0 +1,103 @@
+.select {
+    cursor: pointer;
+    position: relative;
+    .select__header {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid;
+        border-radius: 4px;
+    }
+    .select__wrapper {
+        position: absolute;
+        margin-top: 10px;
+        border-radius: 7px;
+        text-align: left;
+        overflow: scroll;
+        height: 160px;
+        z-index: 99;
+        width: 100%;
+        border: 1px solid;
+        .item {
+            padding: 10px;
+            &:hover {
+                background-color: var(--gray-color);
+            }
+
+            &.dark {
+                background-color: rgb(238, 238, 238);
+            }
+            &.active {
+                background-color: #ccc;
+            }
+        }
+
+        &.short {
+            height: max-content;
+        }
+        &.close {
+            display: none;
+        }
+        &.open {
+            display: block;
+        }
+    }
+
+    &.dark {
+        .select__header {
+            border-color: var(--dark-color);
+            .selected {
+                color: var(--dark-color);
+            }
+        }
+        .select__wrapper {
+            background: #e7e6e6;
+
+            .item {
+                &:hover {
+                    background-color: var(--sliver-color);
+                }
+                &.active {
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
+
+    &.blue {
+        .select__header {
+            border-color: var(--primary-color);
+            .selected {
+                color: var(--primary-color);
+            }
+        }
+        .select__wrapper {
+            background: #fff;
+            border-color: var(--primary-color);
+
+            .item {
+                &.dark {
+                    background-color: rgba(183, 187, 250, 0.1);
+                }
+                &:hover {
+                    background-color: rgba(0, 174, 255, 0.08);
+                }
+
+                &.active {
+                    background-color: var(--light-color);
+                }
+            }
+        }
+
+        .icon {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.icon {
+    display: flex;
+    .svg {
+        margin: auto;
+    }
+}

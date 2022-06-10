@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --size: 8px;
+
+  --datePicker-color: rgb(204, 204, 204);
+  --datePickerSelect-color: #0288d1;
+  --datePickerActive-color: #ff0000ff;
+}
+
+.datePicker {
+  margin: 10px;
+  position: relative;
+  width: calc(40 * var(--size));
+
+  .content,
+  .wrapper {
+    width: 100%;
+  }
+  .content {
+    height: calc(6 * var(--size));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 calc(2 * var(--size));
+    border: 1px solid var(--datePicker-color);
+    border-radius: 4px;
+    cursor: pointer;
+
+    &.open {
+      border: 2px solid var(--datePickerSelect-color);
+      padding: 0 calc(2 * var(--size) - 1px);
+      .icon,
+      .dateValue {
+        color: var(--datePickerSelect-color);
+      }
+    }
+    .dateValue {
+      font-family: "Mulish", sans-serif;
+
+      &.placeholder {
+        color: rgb(136, 136, 136);
+      }
+    }
+    .icon {
+      display: flex;
+      font-size: 1.5rem;
+      color: var(--datePicker-color);
+      .svg {
+        margin: auto;
+      }
+    }
+  }
+  .wrapper {
+    position: absolute;
+    margin-top: var(--size);
+    padding: var(--size);
+    padding-top: 16px;
+    border-radius: 4px;
+    background: #ffffff;
+    z-index: 99;
+    box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -3px,
+      rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px;
+    &.hidden {
+      display: none;
+    }
+    .head {
+      display: flex;
+      justify-content: space-between;
+      .action {
+        display: flex;
+      }
+      .monthAndYear {
+        font-family: "Mulish", sans-serif;
+      }
+      .icon {
+        display: flex;
+        cursor: pointer;
+        font-size: 1.2rem;
+        .svg {
+          margin: auto;
+        }
+        &:hover {
+          opacity: 0.6;
+          transition: all 0.3s linear;
+        }
+      }
+    }
+    .body {
+      margin-top: calc(2 * var(--size));
+      .days {
+        .day {
+        }
+      }
+      .dates {
+        margin-top: var(--size);
+        .week {
+          position: relative;
+          .date {
+            display: flex;
+            color: #ccc;
+            cursor: pointer;
+            .text {
+              position: relative;
+              width: 30px;
+              padding: 5px 0;
+              text-align: center;
+              margin: auto;
+              border-radius: 50%;
+              font-weight: 300;
+              font-family: "Mulish", sans-serif;
+            }
+            &.dateActive {
+              color: #000000;
+            }
+            &:hover {
+              .text {
+                background: rgba(204, 204, 204, 0.4);
+                transition: all 0.3s linear;
+              }
+            }
+            &.isDate {
+              &.dateActive {
+                .text {
+                  color: var(--datePickerActive-color);
+                }
+              }
+            }
+            &.isSelected {
+              &.dateActive {
+                .text {
+                  background: var(--datePickerSelect-color);
+                  color: #ffffff;
+                }
+              }
+            }
+          }
+        }
+      }
+      .action {
+        padding: 10px;
+        cursor: pointer;
+        color: #0288d1ff;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.group {
+  clear: both;
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  .col {
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+    width: 12.91%;
+    text-align: center;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

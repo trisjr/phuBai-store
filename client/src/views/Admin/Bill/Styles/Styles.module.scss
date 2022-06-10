@@ -1,0 +1,28 @@
+.code {
+    flex-basis: 20%;
+}
+.ticket {
+    flex-basis: 20%;
+}
+.booking {
+    flex-basis: 20%;
+}
+.cost {
+    flex-basis: 10%;
+}
+.time {
+    flex-basis: 20%;
+}
+.index {
+    flex-basis: 10%;
+}
+
+.email,
+.fullName {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.text {
+    margin: 10px 0;
+}

@@ -1,0 +1,35 @@
+.input {
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: calc(100% - 20px);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+  margin: 10px;
+  height: 46px;
+
+  &::placeholder {
+    font-size: 1rem;
+  }
+
+  &.blue {
+    border-color: var(--blue-color);
+    color: var(--blue-color);
+    &::placeholder {
+      color: var(--blue-color);
+    }
+  }
+  &.dark {
+    border-color: var(--dark-color);
+    &::placeholder {
+      color: var(--dark-color);
+    }
+  }
+  &.error {
+    border-color: var(--error-color);
+    color: var(--error-color);
+    &::placeholder {
+      color: var(--error-color);
+    }
+  }
+}

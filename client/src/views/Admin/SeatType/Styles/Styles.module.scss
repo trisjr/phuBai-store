@@ -1,0 +1,27 @@
+.code {
+    flex-basis: 20%;
+}
+.name {
+    flex-basis: 30%;
+}
+.key {
+    flex-basis: 20%;
+}
+.price {
+    flex-basis: 20%;
+}
+.index {
+    flex-basis: 10%;
+}
+
+.code,
+.name,
+.key,
+.price {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.text {
+    margin: 10px 0;
+}

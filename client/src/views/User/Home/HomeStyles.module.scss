@@ -1,0 +1,70 @@
+.home {
+  .homeSection {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background-image: url("./Background.png");
+    background-size: cover;
+    background-position: right;
+    transition: all 0.4s ease-in-out;
+
+    .heading {
+      width: 90%;
+      margin: auto;
+      padding: 35px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .headingTitle {
+        font-size: 3rem;
+        font-weight: 800;
+      }
+
+      .headingLink {
+        .link {
+          display: inline-block;
+          list-style: none;
+          margin-left: 100px;
+          .href {
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+
+            &::after {
+              content: "";
+              height: 3px;
+              width: 0;
+              background: red;
+              position: absolute;
+              left: 0;
+              bottom: -5px;
+              transition: 0.5s;
+            }
+            &:hover &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      position: absolute;
+      width: 50%;
+      align-items: center;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      .text {
+        font-size: 3rem;
+        font-weight: 800;
+      }
+      .action {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 48px;
+      }
+    }
+  }
+}
